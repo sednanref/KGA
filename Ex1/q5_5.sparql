@@ -1,0 +1,11 @@
+# Objects with two or more satellites (you can assume that different URIs refer to different
+# objects).
+
+PREFIX ex: <http://example.org/planets/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?subject (COUNT(?satellite) as ?NSatellites)
+WHERE {
+  ?subject ex:satellite ?satellite.
+} GROUP BY ?subject
+HAVING(?NSatellites > 1)  

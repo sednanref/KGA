@@ -1,0 +1,11 @@
+#Objects having a satellite which are themselves satellite of another object.
+
+PREFIX ex: <http://example.org/planets/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?subject2
+WHERE {
+  ?subject ex:satellite ?subject2.
+  ?subject2 ex:satellite ?object.
+ 
+}

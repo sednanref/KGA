@@ -1,0 +1,16 @@
+# Objects having a satellite with an English name, which are also satellite of another object
+# with more than 3000 kilometers diameter.
+PREFIX ex: <http://example.org/planets/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?subject
+WHERE {
+  ?subject ex:satellite ?satellite.
+  ?satellite ex:name ?name.
+  ?otherObj ex:satellite ?subject.
+  ?otherObj ex:radius ?radius.
+  
+  FILTER langMATCHES(lang(?name), "en").
+  FILTER (?radius * 2 > 3000).
+	
+}
