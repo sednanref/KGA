@@ -1,0 +1,15 @@
+# Give me all cities in New Jersey with more than 100000 inhabitants.
+PREFIX res:<http://dbpedia.org/resource/>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+PREFIX yago:<http://dbpedia.org/class/yago/>
+PREFIX dbp:<http://dbpedia.org/property/>
+
+
+select  ?city ?pop
+where {
+    ?city a dbo:City.
+    ?city dbo:isPartOf res:New_Jersey.
+    ?city dbo:populationTotal ?pop.
+    FILTER(?pop > 100000)
+} 
+LIMIT 500

@@ -1,0 +1,10 @@
+# European countries with Monarchy
+PREFIX res:<http://dbpedia.org/resource/>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+PREFIX yago:<http://dbpedia.org/class/yago/>
+
+select  distinct ?country
+where {
+    ?country a yago:EuropeanCountries.
+    ?country dbo:governmentType res:Constitutional_monarchy
+} LIMIT 500

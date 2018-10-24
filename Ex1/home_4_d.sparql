@@ -1,0 +1,10 @@
+# Which states of Germany are governed by the Social Democratic Party?
+PREFIX res:<http://dbpedia.org/resource/>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+PREFIX yago:<http://dbpedia.org/class/yago/>
+
+select  distinct ?state ?rulingParty
+where {
+    ?state a yago:StatesOfGermany.
+    ?state dbp:rulingParty res:Social_Democratic_Party_of_Germany.
+} LIMIT 500

@@ -1,0 +1,8 @@
+# Height of Claudia Schiffer
+PREFIX res:<http://dbpedia.org/resource/>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+
+select distinct ?height
+where {
+    res:Claudia_Schiffer dbo:height ?height
+} 

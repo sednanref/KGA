@@ -1,0 +1,11 @@
+# Which monarchs of the United Kingdom were married to a German?
+PREFIX res:<http://dbpedia.org/resource/>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+PREFIX yago:<http://dbpedia.org/class/yago/>
+
+select  ?monarch  ?person
+where {
+    ?monarch a yago:MonarchsOfTheUnitedKingdom.
+    ?monarch dbo:spouse ?person.
+    ?person dbo:birthPlace res:Germany
+} LIMIT 500
